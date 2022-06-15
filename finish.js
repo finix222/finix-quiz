@@ -1,12 +1,10 @@
 let userScoreBoard = document.querySelector('.box')
 let otherScoreBoards = document.querySelectorAll('.top')
-
 let highScoresString = localStorage.getItem('highScores')
 let highScoresObject = JSON.parse(highScoresString)
-
 let currentScore = localStorage.getItem('currentScore')
-
 let alreadyAddedToOne = false
+const restart = document.querySelector('#restart')
 
 
 userScoreBoard.children[1].innerText = currentScore
@@ -26,6 +24,9 @@ otherScoreBoards.forEach((ele,i)=>{
     }
    }
   
+})
+restart.addEventListener('click',()=>{
+    window.location.assign("./start.html")
 })
 
 

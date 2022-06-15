@@ -21,8 +21,6 @@ saveHighScore = (e) => {
         name: username.value,
     };
     highScores.push(score);
-    // highScores.sort((a, b) => b.score - a.score);
-    
 
     localStorage.setItem('highScores', JSON.stringify(highScores));
     localStorage.setItem('currentUser',score.name)//store name of user currentlly playing

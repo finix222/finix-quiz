@@ -1,19 +1,16 @@
 :root{
-    --pri-blue: #CFEBEA;
-    --question-text-color: #285886;
-    --hover-option-color: #4BC3CE;
+    --pri-blue: #CDF7F0;
+    --question-text-color: #00497E;
+    --hover-option-color: #0FD9DE;
 }
 
 
 body,html{
     padding: 0px;
     margin: 0px;
-  
+    font-family: 'Courier New', Courier, monospace;
 } 
 
-
-
-   
 
 .question-cont{
     width: 100vw;
@@ -22,6 +19,8 @@ body,html{
     align-items: center;
     flex-direction: row;
     min-height: 100vh;
+    margin-top: 30px;
+    font-size: 16px;
 }
 
 .question-box{
@@ -53,7 +52,7 @@ body,html{
    width: 10px;
    height: 10px;
    margin: 10px;
-   opacity: 0.2;
+   opacity: 0.1;
    background: center center url("/images/apple-svgrepo-com.svg") no-repeat;
   
 }
@@ -139,9 +138,8 @@ body,html{
   color: var(--question-text-color);
   font-family: 'Courier New', Courier, monospace;
   font-weight: 900;
-  border-bottom: 1px double white;
-  
-  box-shadow: 0px 4px 0px -0.5px rgba(0, 0, 0,0.2);
+  border-bottom: 1px double  #CDF7F0;
+  box-shadow: 0px 4px 0px -0.1px #e4fcf5;
   display: absolute;
   width: 100%;
   
@@ -156,21 +154,6 @@ body,html{
   text-align: center;
   max-width: 50%;
 }
-
-
- .container { /* used to style the options using the label */
-    display: block;
-    position: relative;
-    padding: 35px;
-    margin-bottom: 12px;
-    cursor: pointer;
-    /* font-size: 22px;
-    -webkit-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
-    user-select: none; */
-  }
-
  
  /* hide default radio button ui */
 .options {
@@ -184,16 +167,16 @@ body,html{
 .option-area{
     font-size: 1rem;
     font-family: 'Courier New', Courier, monospace;
-    
-    
     padding: 50px 0px;
     position: relative;
     z-index: 2;
 }
 
 .container{
+    display: block;
+    position: relative;
+    cursor: pointer;
     font-size: 1rem;
-    font-family: 'Courier New', Courier, monospace;
     margin: 15px;
     background-color: white;
     padding: 15px 10px;
@@ -202,14 +185,14 @@ body,html{
     position: relative;
     display: flex;
     transition: transform 0.1s ease-out;
+    min-width: 300px;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
 }
 
 .container:hover{
     background-color: var(--hover-option-color);
     color: white;
     transform: scale(1.02) translateY(5px);
-    
-    /* border: 0.01px solid white; */
 }
 
 
@@ -217,7 +200,6 @@ body,html{
 .container.selected{
     background-color: var(--hover-option-color);
     color: white;
-    /* border: 1.5px solid white; */
 }
 
 
@@ -254,6 +236,10 @@ body,html{
 .buttons{
     position: relative;
     flex-basis: 700px;
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+
     z-index: 1;
 }
 
@@ -268,8 +254,9 @@ body,html{
 
 
 .btn.left{
-    position: absolute;
-    left: 0px;
+    /* position: absolute; */
+    /* left: 0px; */
+    margin-left: 30px;
     background: no-repeat center center url("/images/icon-angle-left.svg");
     border: none;
     background-color: var(--question-text-color);
@@ -280,8 +267,8 @@ body,html{
 }
 
 .btn.right{
-  position: absolute;
-  right: 0px;
+  /* position: absolute; */
+  margin-right: 30px;
   background: no-repeat center center url("/images/icon-angle-right.svg");
   border: none;
   background-color: var(--question-text-color);
@@ -301,19 +288,70 @@ body,html{
     background-color: var(--question-text-color);
     color: white;
 }
+#submit{
+    margin: 10px auto;
+    padding: 20px;
+    width: 100px;
+    display: flex;
+    justify-content: center;
+    cursor: pointer;
+    background-color:var(--question-text-color);
+    border: none;
+    width: 60px;
+    padding: 10px 50px;
+    border-radius: 20px;
+    box-shadow: 1px 1px 6px var(--question-text-color);
+    transition: all 0.2s ease-in;
+    color: var(--pri-blue);
+}
+#submit:hover{
+    transform: scale(1.002) ;
+    background-color: var(--hover-option-color);
+    color: var(--question-text-color)
+}
 
+
+/* loader style */
+.center {
+    align-items: center;
+    /* height: 400px; */
+    display: block;
+    justify-content: center;
+}
+
+.lds-facebook {
+    display: inline-block;
+    position: relative;
+    width: 80px;
+    /* height: 80px; */
+  }
+  .lds-facebook div {
+    display: inline-block;
+    position: absolute;
+    left: 8px;
+    width: 16px;
+    background: #2321af;
+    animation: lds-facebook 1.2s cubic-bezier(0, 0.5, 0.5, 1) infinite;
+  }
+  .lds-facebook div:nth-child(1) {
+    left: 8px;
+    animation-delay: -0.24s;
+  }
+  .lds-facebook div:nth-child(2) {
+    left: 32px;
+    animation-delay: -0.12s;
+  }
+  .lds-facebook div:nth-child(3) {
+    left: 56px;
+    animation-delay: 0;
+  }
 
   
   
 
 @media (min-width:700px){
-    /* :root{
-        --pri-blue: yellow;
-    } */
-
     body{
         font-size: 0.7rem;
-        /* background-color: yellow; */
     }
 
     .container{

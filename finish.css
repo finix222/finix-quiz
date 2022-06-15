@@ -1,7 +1,7 @@
 :root{
-    --pri-blue: #CFEBEA;
-    --question-text-color: #285886;
-    --hover-option-color: #4BC3CE;
+    --pri-blue: ##282747;
+    --question-text-color: #4e94d6;
+    --hover-option-color: #436983;
     font-family: 'Courier New', Courier, monospace;
 }
 
@@ -15,6 +15,8 @@ body{
     height: 100vh;
 }
 .conall{
+    background: rgb(2,0,36);
+background: linear-gradient(180deg, rgba(2,0,36,1) 0%, rgba(24,27,167,1) 0%, rgba(100,108,190,1) 41%, rgba(35,39,103,1) 80%);
     align-items: center;
     display: flex;
     justify-content: center;
@@ -24,38 +26,58 @@ body{
 .top-three{
     display: flex;
     flex-direction: column;
+    min-width: 250px;
     gap: 0.5rem;
+    background-color: rgb(15,16,43);
+    padding: 30px;
+    border-radius: 20px;
     
 }
 .box{
+    margin-top: 10px;
+    align-items: center;
     background-color:var(--pri-blue);
     display: flex;
     justify-content: space-between;
-    min-width: 350px;
-    padding: 20px 50px;
+    min-width: 100px;
+    padding: 10px 10px;
     border-radius: 10px;
     position: relative;
     z-index: 3;
     box-shadow: 1px 1px 6px var(--question-text-color);
     transition: all 0.2s ease-in;
     color: var(--question-text-color);
-   
+}
+#restart{
+    cursor: pointer;
+    background-color:var(--pri-blue);
+    width: 60px;
+    margin:15px auto;
+    padding: 10px 50px;
+    border-radius: 20px;
+    box-shadow: 1px 1px 6px var(--question-text-color);
+    transition: all 0.2s ease-in;
+    color: var(--question-text-color);
+    display: flex;
+    justify-content: center;
+
+}
+#restart:hover{
+    transform: scale(1.022) ;
+    box-shadow: 1px 1px 10px var(--question-text-color);
 }
 
 .top{
     opacity: 0;
 }
-
 .box:hover{
   transform: scale(1.002) ;
   box-shadow: 1px 1px 10px var(--question-text-color);
 }
-
 .box.current{
-    /* min-width: 400px; */
-    background-color: pink;
+    background-color: rgb(97, 214, 223);
 }
 .box.current-score{
     margin-bottom: 40px;
-    transform: scale(1.5);
+    transform: scale(1.1);
 }

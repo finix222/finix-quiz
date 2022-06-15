@@ -3,12 +3,10 @@ const options_containers = document.querySelectorAll('.container')
 const next_btn = document.querySelector('.right')
 const prev_btn = document.querySelector('.left')
 const submit_btn = document.querySelector('.submit')
-
 const question_text_box = document.querySelector('.question-text')
-
 const option_text = document.querySelectorAll('.option-text')
-
 const questionNumber = document.querySelector('.question-number')
+const center = document.getElementById('center')
 
 let data = {};
 let resultIndex = 0; //this index is for looping through returned results
@@ -35,19 +33,12 @@ const generateRandomValue = () =>{
 async function getQuestions(){
      const res = await fetch("https://opentdb.com/api.php?amount=5&type=multiple")
      const jsonData = await res.json();
-    //  console.log(jsonData)
-
-    // if(jsonData.response_code !== 0){
-
-    //     console.log('yeah')
-    //     getQuestions()
-       
-    // }
      data = jsonData
      arrayOfAnswers.length = data.results.length
  
      let randomValue = generateRandomValue()
     //  generateFirstQuestionAndAnswer(randomValue)
+    
     loopQuestionAndAnswer(randomValue,0)
 } 
 
